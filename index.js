@@ -10,7 +10,7 @@ const app = express();
  
  app.get("/",function(req, res){
     const jhonkidneys = users[0].kidneys;
-    console.log(jhonkidneys)
+    console.log(jhonkidneys);
  })
 
  app.listen(3000);
