@@ -1,10 +1,16 @@
-var users =[{
-    name:"abhu",
-    age:20,
-    email:"",
-    metadata:{
-        
-        createdAt:"2023-10-01",
-        updatedAt:"2023-10-02"
+const express = require('express');
+const app = express();
+
+app.get("/", function (req, res) {
+    try {
+        // Simulated error
+        throw new Error("This is an error");
+    } catch (err) {
+        console.error("Caught Error:", err.message);
+        res.status(500).json({ error: err.message });
     }
-}] 
+});
+
+app.listen(3000, () => {
+    console.log(jhonkidneys)
+});
