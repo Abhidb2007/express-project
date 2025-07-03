@@ -1,14 +1,12 @@
 const express = require("express");
-const app =require();
+const app = express();
 app.get("/sum",function(req, res){
     const a = req.query.a;
-    const b = req.quey.b;
+    const b = req.query.b;
     res.json({
-        sum:a+b
+        answer: a * b
     })
    
-})
-app.get("/multiply",function(req, res){
 })
 
 app.listen(3000);
