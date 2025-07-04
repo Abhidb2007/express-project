@@ -2,6 +2,8 @@ const express = require("express");
 const app = express();
 let requestCount = 0;
 app.get("/sum",function(req, res){
+    requestCount = requestCount + 1;
+    console.log("Total number of requests = " + requestCount);
     const a = parseInt(req.query.a);
     const b = parseInt(req.query.b);
     res.json({
