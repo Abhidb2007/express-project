@@ -16,15 +16,6 @@ function realSumHandler(req,res){
 }
 app.get("/sum",requestIncreaser,realSumHandler);
 
-app.get("/multiply",function(req, res){
-    requestCount = requestCount + 1;
-    console.log("Total number of requests = " + requestCount);
-    const a = parseInt(req.query,a);
-    const b = parseInt(req.query.b);
-    res. json({
-        answer:a*b,
-    });
-});
 
 app.listen(3000);
 
