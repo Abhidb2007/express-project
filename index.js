@@ -7,15 +7,15 @@ function requestIncreaser(req, res) {
     console.log("Total number of requests = " + requestCount);
     next();
 }
-app.get("/sum",function(req, res){
-    requestIncreaser(req. res);
+function realSumHandler(req,res){
     const a = parseInt(req.query.a);
     const b = parseInt(req.query.b);
     res.json({
         answer: a + b,
     });
-   
-});
+}
+app.get("/sum",requestIncreaser,realSumHandler);
+
 app.get("/multiply",function(req, res){
     requestCount = requestCount + 1;
     console.log("Total number of requests = " + requestCount);
