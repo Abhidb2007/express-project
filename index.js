@@ -3,7 +3,7 @@ const app = express();
 let requestCount = 0;
 
 function requestIncreaser(req, res) {
-    requestCount += 1;
+    requestCount +=2;
     console.log("Total number of requests = " + requestCount);
     req.requestCount = requestCount;
 }
