@@ -8,8 +8,7 @@ function requestIncreaser(req, res) {
     req.requestCount = requestCount;
 }
 app.get("/sum",function(req, res){
-    requestCount = requestCount + 1;
-    console.log("Total number of requests = " + requestCount);
+    requestIncreaser(req. res);
     const a = parseInt(req.query.a);
     const b = parseInt(req.query.b);
     res.json({
