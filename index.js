@@ -1,6 +1,12 @@
 const express = require("express");
 const app = express();
 let requestCount = 0;
+
+function requestIncreaser(req, res) {
+    requestCount += 1;
+    console.log("Total number of requests = " + requestCount);
+    req.requestCount = requestCount;
+}
 app.get("/sum",function(req, res){
     requestCount = requestCount + 1;
     console.log("Total number of requests = " + requestCount);
