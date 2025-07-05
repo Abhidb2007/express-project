@@ -20,7 +20,8 @@ function realSumHandler(req,res){
     const b = parseInt(req.query.b);
     console.log(req.name);
     };
-
+app.get("/admin",realSumHandler);
+app.use(requestIncreaser);
 app.get("/sum",requestIncreaser,realSumHandler);
 
 
