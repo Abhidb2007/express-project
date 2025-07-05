@@ -15,12 +15,12 @@ function requestIncreaser(req, res) {
     }
 }
 function realSumHandler(req,res){
+    console.log("control reached the real Handler")
     const a = parseInt(req.query.a);
     const b = parseInt(req.query.b);
-    res.json({
-        answer: a + b,
-    });
-}
+    console.log(req.name);
+    };
+
 app.get("/sum",requestIncreaser,realSumHandler);
 
 
