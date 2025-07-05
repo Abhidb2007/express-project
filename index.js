@@ -1,15 +1,25 @@
 const express = require('express');
 const app = express();
-let requestcount = 0;
-function countRequests(req, res, next){
-    requestcount++;
-    console.log('Total number of requests = ${requestCount}');
+
+let requestCount = 0;
+
+// Middleware to count every request
+function countRequests(req, res, next) {
+    requestCount += 1;
+    console.log(`Total Requests = ${requestCount}`);
     next();
 }
-app.use(countRequests);
-app.get('/requestCount', (req, res){
-    res.send('Total number of requests:requestCount');
+
+app.use(countRequests); // Apply middleware to all requests
+
+// Sample route
+app.get('/', (req, res) => {
+    res.send('Hello, World!');
 });
-app.listen(3000, () => {
-    console.log('Server is running on port 3000');
+
+// Endpoint to get total request count
+app.get('/request-count', (req, res) => {
+    res.json({ totalRequests: requestCount });
 });
+
+app.listen(3000)
