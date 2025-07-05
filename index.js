@@ -4,8 +4,15 @@ let requestCount = 0;
 
 function requestIncreaser(req, res) {
     requestCount +1;
-    console.log("Total number of requests = " + requestCount);
-    next();
+    if (req.headers.cookie==="google"){
+        next()
+    }
+    else{
+        console.log("Total number of requests= " +requestCount);
+        res.json({
+            message:"I ended the request"
+        })
+    }
 }
 function realSumHandler(req,res){
     const a = parseInt(req.query.a);
