@@ -1,4 +1,15 @@
 <head>
+    <script>
+        function sendRequest(){
+            const a=document.getElementryById("a").value;
+            const b=document.getElementryById("b").value;
+            axios.post("https://localhost:3000/sum",{
+                a: a,
+                b: b
+            })
+            
+        }
+    </script>
     </head>
     <body>
         <input id="a" type="text" placeholder="First value"></input>
