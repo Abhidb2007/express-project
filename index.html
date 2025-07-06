@@ -1,13 +1,14 @@
 <head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/1.7.6/axios.min.js"></script>
     <script>
-        function sendRequest(){
+        async function sendRequest(){
             const a=document.getElementryById("a").value;
             const b=document.getElementryById("b").value;
-            axios.post("https://localhost:3000/sum",{
+            const response=await axios.post("https://localhost:3000/sum",{
                 a: a,
                 b: b
             })
-            
+            console.log(response.data);
         }
     </script>
     </head>
