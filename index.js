@@ -1,7 +1,8 @@
-const express = require('express');
+const express = require("express");
+const cors = require("cors");
 const app = express();
 app.use(express.json());
-app.use(cors());
+app.use(cors())
 app.post("/sum",function(req, res){
     const a = parseInt(req.body.a);
     const b = parseInt(req.body.b);
@@ -9,6 +10,5 @@ app.post("/sum",function(req, res){
         sum :a+b
     });
 });
-    app.listen(3000);
-
+    app.listen(3000)
     
